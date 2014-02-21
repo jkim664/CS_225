@@ -1,0 +1,24 @@
+Monad Autograder
+Testing mp2.1 at 2013-01-30 13:59:07
+
+"I'm not saying he's evil incarnate based on that fact alone; I've always known it." ~ REDACTED
+
+Setting up test environment...
+Compiling...
+================================================================
+
+
+Running tests...
+================================================================
+InvertColorsEven  . . [33 pts] - passed
+FlipLeftEven  . . . . [17 pts] - passed
+FlipLeftOdd . . . . . [17 pts] - passed
+AdjustBrightnessEven  [11 pts] - passed
+AdjustBrightnessEven2 [11 pts] - passed
+AdjustBrightnessEven3 [11 pts] - passed
+
+
+Total score...
+================================================================
+TOTAL SCORE: 100
+

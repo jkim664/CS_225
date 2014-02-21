@@ -1,0 +1,157 @@
+Monad Autograder
+Testing mp2 at 2013-02-05 00:24:13
+
+"I think it's hacky, but maybe it's just good." ~ Sean Massung
+
+Setting up test environment...
+Compiling...
+================================================================
+make: warning: undefined variable `CXXFLAGS'
+make: warning: undefined variable `CPPFLAGS'
+make: warning: undefined variable `LDFLAGS'
+make: warning: undefined variable `TARGET_ARCH'
+make: warning: undefined variable `LOADLIBES'
+make: warning: undefined variable `LDLIBS'
+In file included from testscene.cpp:65:
+scene.h:6: error: redefinition of 'class Image'
+image.h:6: error: previous definition of 'class Image'
+testscene.cpp:68: error: expected unqualified-id before 'using'
+testscene.cpp:115: error: expected constructor, destructor, or type conversion before '*' token
+testscene.cpp:116: error: expected constructor, destructor, or type conversion before '*' token
+testscene.cpp: In function 'void tearDown()':
+testscene.cpp:166: error: 'firstScene' was not declared in this scope
+testscene.cpp:167: error: type '<type error>' argument given to 'delete', expected pointer
+testscene.cpp:169: error: 'secondScene' was not declared in this scope
+testscene.cpp:170: error: type '<type error>' argument given to 'delete', expected pointer
+testscene.cpp: In function 'void proxy_test::AddPictureValidIndex(util::pipestream&)':
+testscene.cpp:257: error: 'firstScene' was not declared in this scope
+testscene.cpp:257: error: expected type-specifier before 'Scene'
+testscene.cpp:257: error: expected ';' before 'Scene'
+testscene.cpp: In function 'void proxy_test::AddPictureInvalidIndex(util::pipestream&)':
+testscene.cpp:266: error: 'firstScene' was not declared in this scope
+testscene.cpp:266: error: expected type-specifier before 'Scene'
+testscene.cpp:266: error: expected ';' before 'Scene'
+testscene.cpp: In function 'void proxy_test::ImageAssignmentOperator(util::pipestream&)':
+testscene.cpp:278: error: 'firstScene' was not declared in this scope
+testscene.cpp:278: error: expected type-specifier before 'Scene'
+testscene.cpp:278: error: expected ';' before 'Scene'
+testscene.cpp: In function 'void proxy_test::SceneGetPictureInvalidIndex(util::pipestream&)':
+testscene.cpp:289: error: 'firstScene' was not declared in this scope
+testscene.cpp:289: error: expected type-specifier before 'Scene'
+testscene.cpp:289: error: expected ';' before 'Scene'
+testscene.cpp: In function 'void proxy_test::SceneChangeMaxLayersLarger(util::pipestream&)':
+testscene.cpp:304: error: 'firstScene' was not declared in this scope
+testscene.cpp:304: error: expected type-specifier before 'Scene'
+testscene.cpp:304: error: expected ';' before 'Scene'
+testscene.cpp: In function 'void proxy_test::SceneChangeMaxLayersSmaller(util::pipestream&)':
+testscene.cpp:315: error: 'firstScene' was not declared in this scope
+testscene.cpp:315: error: expected type-specifier before 'Scene'
+testscene.cpp:315: error: expected ';' before 'Scene'
+testscene.cpp: In function 'void proxy_test::SceneChangeMaxLayersInvalidChange(util::pipestream&)':
+testscene.cpp:325: error: 'firstScene' was not declared in this scope
+testscene.cpp:325: error: expected type-specifier before 'Scene'
+testscene.cpp:325: error: expected ';' before 'Scene'
+testscene.cpp: In function 'void proxy_test::SceneCopyCtor(util::pipestream&)':
+testscene.cpp:338: error: 'firstScene' was not declared in this scope
+testscene.cpp:338: error: expected type-specifier before 'Scene'
+testscene.cpp:338: error: expected ';' before 'Scene'
+testscene.cpp:340: error: 'secondScene' was not declared in this scope
+testscene.cpp:340: error: expected type-specifier before 'Scene'
+testscene.cpp:340: error: expected ';' before 'Scene'
+testscene.cpp: In function 'void proxy_test::SceneCopyCtor2(util::pipestream&)':
+testscene.cpp:349: error: 'firstScene' was not declared in this scope
+testscene.cpp:349: error: expected type-specifier before 'Scene'
+testscene.cpp:349: error: expected ';' before 'Scene'
+testscene.cpp:351: error: 'secondScene' was not declared in this scope
+testscene.cpp:351: error: expected type-specifier before 'Scene'
+testscene.cpp:351: error: expected ';' before 'Scene'
+testscene.cpp: In function 'void proxy_test::SceneAssignmentOperator(util::pipestream&)':
+testscene.cpp:362: error: 'firstScene' was not declared in this scope
+testscene.cpp:362: error: expected type-specifier before 'Scene'
+testscene.cpp:362: error: expected ';' before 'Scene'
+testscene.cpp:363: error: 'secondScene' was not declared in this scope
+testscene.cpp:363: error: expected type-specifier before 'Scene'
+testscene.cpp:363: error: expected ';' before 'Scene'
+testscene.cpp: In function 'void proxy_test::SceneAssignmentOperator2(util::pipestream&)':
+testscene.cpp:374: error: 'firstScene' was not declared in this scope
+testscene.cpp:374: error: expected type-specifier before 'Scene'
+testscene.cpp:374: error: expected ';' before 'Scene'
+testscene.cpp:375: error: 'secondScene' was not declared in this scope
+testscene.cpp:375: error: expected type-specifier before 'Scene'
+testscene.cpp:375: error: expected ';' before 'Scene'
+testscene.cpp: In function 'void proxy_test::SceneChangeLayer(util::pipestream&)':
+testscene.cpp:388: error: 'firstScene' was not declared in this scope
+testscene.cpp:388: error: expected type-specifier before 'Scene'
+testscene.cpp:388: error: expected ';' before 'Scene'
+testscene.cpp: In function 'void proxy_test::SceneChangeLayerInvalid(util::pipestream&)':
+testscene.cpp:400: error: 'firstScene' was not declared in this scope
+testscene.cpp:400: error: expected type-specifier before 'Scene'
+testscene.cpp:400: error: expected ';' before 'Scene'
+testscene.cpp: In function 'void proxy_test::SceneDrawScene(util::pipestream&)':
+testscene.cpp:412: error: 'firstScene' was not declared in this scope
+testscene.cpp:412: error: expected type-specifier before 'Scene'
+testscene.cpp:412: error: expected ';' before 'Scene'
+testscene.cpp: In function 'void proxy_test::SceneDrawScene2(util::pipestream&)':
+testscene.cpp:426: error: 'firstScene' was not declared in this scope
+testscene.cpp:426: error: expected type-specifier before 'Scene'
+testscene.cpp:426: error: expected ';' before 'Scene'
+testscene.cpp: In function 'void proxy_test::SceneDrawScene3(util::pipestream&)':
+testscene.cpp:440: error: 'firstScene' was not declared in this scope
+testscene.cpp:440: error: expected type-specifier before 'Scene'
+testscene.cpp:440: error: expected ';' before 'Scene'
+testscene.cpp: In function 'void proxy_test::SceneDrawScene4(util::pipestream&)':
+testscene.cpp:455: error: 'firstScene' was not declared in this scope
+testscene.cpp:455: error: expected type-specifier before 'Scene'
+testscene.cpp:455: error: expected ';' before 'Scene'
+testscene.cpp: In function 'void proxy_test::SceneDrawSceneChangeLayer(util::pipestream&)':
+testscene.cpp:469: error: 'firstScene' was not declared in this scope
+testscene.cpp:469: error: expected type-specifier before 'Scene'
+testscene.cpp:469: error: expected ';' before 'Scene'
+testscene.cpp: In function 'void proxy_test::SceneDrawSceneDeletePicture(util::pipestream&)':
+testscene.cpp:482: error: 'firstScene' was not declared in this scope
+testscene.cpp:482: error: expected type-specifier before 'Scene'
+testscene.cpp:482: error: expected ';' before 'Scene'
+testscene.cpp: In function 'void proxy_test::SceneDrawSceneTranslate(util::pipestream&)':
+testscene.cpp:495: error: 'firstScene' was not declared in this scope
+testscene.cpp:495: error: expected type-specifier before 'Scene'
+testscene.cpp:495: error: expected ';' before 'Scene'
+testscene.cpp: In function 'void proxy_test::SceneDrawSceneTranslate2(util::pipestream&)':
+testscene.cpp:507: error: 'firstScene' was not declared in this scope
+testscene.cpp:507: error: expected type-specifier before 'Scene'
+testscene.cpp:507: error: expected ';' before 'Scene'
+testscene.cpp: In function 'void proxy_test::SceneTranslateInvalid(util::pipestream&)':
+testscene.cpp:520: error: 'firstScene' was not declared in this scope
+testscene.cpp:520: error: expected type-specifier before 'Scene'
+testscene.cpp:520: error: expected ';' before 'Scene'
+testscene.cpp: In function 'void proxy_test::SceneTranslateInvalid2(util::pipestream&)':
+testscene.cpp:533: error: 'firstScene' was not declared in this scope
+testscene.cpp:533: error: expected type-specifier before 'Scene'
+testscene.cpp:533: error: expected ';' before 'Scene'
+testscene.cpp: In function 'void proxy_test::SceneDeletePictureInvalid(util::pipestream&)':
+testscene.cpp:545: error: 'firstScene' was not declared in this scope
+testscene.cpp:545: error: expected type-specifier before 'Scene'
+testscene.cpp:545: error: expected ';' before 'Scene'
+testscene.cpp: In function 'void proxy_test::Valgrind2(util::pipestream&)':
+testscene.cpp:558: error: 'firstScene' was not declared in this scope
+testscene.cpp:558: error: expected type-specifier before 'Scene'
+testscene.cpp:558: error: expected ';' before 'Scene'
+testscene.cpp:560: error: 'secondScene' was not declared in this scope
+testscene.cpp:560: error: expected type-specifier before 'Scene'
+testscene.cpp:560: error: expected ';' before 'Scene'
+testscene.cpp: In function 'void proxy_test::Valgrind3(util::pipestream&)':
+testscene.cpp:578: error: 'firstScene' was not declared in this scope
+testscene.cpp:578: error: expected type-specifier before 'Scene'
+testscene.cpp:578: error: expected ';' before 'Scene'
+make: *** [testscene] Error 1
+
+
+exec("./proxy", "--nodetailed") failed: No such file or directory
+Running tests...
+================================================================
+Could not execute test cases
+
+
+Total score...
+================================================================
+TOTAL SCORE: 0
+

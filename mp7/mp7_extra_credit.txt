@@ -1,0 +1,25 @@
+Monad Autograder
+Testing mp7.1 at 2013-04-20 00:24:08
+
+"Should array indices start at 0 or 1? My compromise of 0.5 was rejected without, I thought, proper consideration." ~ Stan Kelly-Bootle
+
+Setting up test environment...
+cp: cannot stat `/dev/shm/geigle1/grading/monad/sp13-cs225/cfilla2/mp7/maze.h': No such file or directory
+cp: cannot stat `/dev/shm/geigle1/grading/monad/sp13-cs225/cfilla2/mp7/maze.cpp': No such file or directory
+Compiling...
+================================================================
+
+
+Running tests...
+================================================================
+addElements1 . . . . [20 pts] - passed
+addElements2 . . . . [20 pts] - passed
+testFindAndSetUnion1 [20 pts] - passed
+testFindAndSetUnion2 [20 pts] - passed
+testFindAndSetUnion3 [20 pts] - passed
+
+
+Total score...
+================================================================
+TOTAL SCORE: 100
+

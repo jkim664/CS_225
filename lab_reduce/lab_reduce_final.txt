@@ -1,0 +1,41 @@
+Monad Autograder
+Testing lab_reduce at 2013-04-08 06:33:50
+
+"The primary purpose of the DATA statement is to give names to constants; instead of referring to pi as 3.141592653589793 at every appearance, the variable PI can be given that value with a DATA statement and used instead of the longer form of the constant. This also simplifies modifying the program, should the value of pi change." ~ FORTRAN manual for Xerox computers
+
+Setting up test environment...
+Compiling...
+================================================================
+
+
+Running tests...
+================================================================
+findmin_minimum_correctness . . . . [20 pts] - FAILED: unit_tests.cpp:127: Assertion (your_min == min) failed
+findmin_minimum_parallel_concurrent [15 pts] - passed
+num_selected_correctness  . . . . . [15 pts] - passed
+num_selected_concurrency  . . . . . [10 pts] - passed
+frequency_parallel_correctness  . . [40 pts] - passed
+
+
+Total score...
+================================================================
+TOTAL SCORE: 80
+
+
+
+Detailed test output...
+================================================================
+----------------------------------------------------------------
+findmin_minimum_correctness [20 points]
+Result: FAILED: unit_tests.cpp:127: Assertion (your_min == min) failed
+Took 0ms (5000ms timeout)
+Output:
+----------------------------------------------------------------
+49821198,26019390
+
+
+----------------------------------------------------------------
+Total score...
+================================================================
+TOTAL SCORE: 80
+

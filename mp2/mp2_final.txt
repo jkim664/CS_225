@@ -1,0 +1,357 @@
+Monad Autograder
+Testing mp2 at 2013-02-06 00:28:12
+
+"Programs must be written for people to read, and only incidentally for machines to execute." ~ Abelson and Sussman
+
+Setting up test environment...
+Compiling...
+================================================================
+
+
+Running tests...
+================================================================
+InvertColorsEven . . . . . . . . . . . [8 pts] - passed
+FlipLeftEven . . . . . . . . . . . . . [5 pts] - passed
+FlipLeftOdd  . . . . . . . . . . . . . [5 pts] - passed
+AdjustBrightnessEven . . . . . . . . . [6 pts] - passed
+AdjustBrightnessEven2  . . . . . . . . [3 pts] - passed
+AdjustBrightnessEven3  . . . . . . . . [3 pts] - passed
+Valgrind1 (valgrind) . . . . . . . . . [5 pts] - passed
+AddPictureValidIndex . . . . . . . . . [3 pts] - passed
+AddPictureInvalidIndex . . . . . . . . [2 pts] - FAILED: Segmentation fault
+ImageAssignmentOperator  . . . . . . . [2 pts] - passed
+SceneGetPictureInvalidIndex  . . . . . [2 pts] - FAILED: testscene.cpp:295: Assertion (NULL == image) failed
+SceneChangeMaxLayersLarger . . . . . . [3 pts] - FAILED: Segmentation fault
+SceneChangeMaxLayersSmaller (valgrind) [1 pts] - FAILED: Segmentation fault
+SceneChangeMaxLayersInvalidChange  . . [2 pts] - FAILED: Segmentation fault
+SceneCopyCtor  . . . . . . . . . . . . [3 pts] - passed
+SceneCopyCtor2 . . . . . . . . . . . . [2 pts] - passed
+SceneAssignmentOperator  . . . . . . . [3 pts] - passed
+SceneAssignmentOperator2 . . . . . . . [2 pts] - passed
+SceneChangeLayer . . . . . . . . . . . [3 pts] - passed
+SceneChangeLayerInvalid  . . . . . . . [2 pts] - FAILED: Segmentation fault
+SceneDrawScene . . . . . . . . . . . . [3 pts] - passed
+SceneDrawScene2  . . . . . . . . . . . [3 pts] - passed
+SceneDrawScene3  . . . . . . . . . . . [3 pts] - FAILED: Segmentation fault
+SceneDrawScene4  . . . . . . . . . . . [3 pts] - FAILED: Aborted
+SceneDrawSceneChangeLayer  . . . . . . [2 pts] - passed
+SceneDrawSceneDeletePicture  . . . . . [2 pts] - passed
+SceneDrawSceneTranslate  . . . . . . . [2 pts] - passed
+SceneDrawSceneTranslate2 . . . . . . . [2 pts] - passed
+SceneTranslateInvalid  . . . . . . . . [2 pts] - passed
+SceneTranslateInvalid2 . . . . . . . . [1 pts] - passed
+SceneDeletePictureInvalid  . . . . . . [2 pts] - FAILED: Segmentation fault
+Valgrind2 (valgrind) . . . . . . . . . [5 pts] - passed
+Valgrind3 (valgrind) . . . . . . . . . [5 pts] - FAILED: Segmentation fault
+
+
+Total score...
+================================================================
+TOTAL SCORE: 75
+
+
+
+Detailed test output...
+================================================================
+----------------------------------------------------------------
+AddPictureInvalidIndex [2 points]
+Result: FAILED: Segmentation fault
+Took 26743088ms (2000ms timeout)
+Output:
+----------------------------------------------------------------
+index out of bounds
+
+----------------------------------------------------------------
+SceneGetPictureInvalidIndex [2 points]
+Result: FAILED: testscene.cpp:295: Assertion (NULL == image) failed
+Took 0ms (2000ms timeout)
+Output:
+----------------------------------------------------------------
+invalid index
+
+----------------------------------------------------------------
+SceneChangeMaxLayersLarger [3 points]
+Result: FAILED: Segmentation fault
+Took 15191299325963ms (2000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+SceneChangeMaxLayersSmaller (run under valgrind) [1 points]
+Result: FAILED: Segmentation fault
+Took unknown time (2000ms timeout)
+Output:
+----------------------------------------------------------------
+Running SceneChangeMaxLayersSmaller [worth 1 points, output below]
+==3540== Invalid read of size 8
+==3540==    at 0x41FDE9: Scene::changemaxlayers(int) (scene.cpp:101)
+==3540==    by 0x40852B: proxy_test::SceneChangeMaxLayersSmaller(util::sizedpipestream<512ul>&) (testscene.cpp:316)
+==3540==    by 0x414DC5: monad_shared::unit_test_input::execute(util::sizedpipestream<512ul>&) const (monad_shared.h:72)
+==3540==    by 0x40E429: proxy::test_execution::child_test() (testscene.cpp:1304)
+==3540==    by 0x40DE48: proxy::test_execution::child() (testscene.cpp:1189)
+==3540==    by 0x416D92: int proxy::fork_execute<proxy::test_execution>(proxy::test_execution&) (testscene.cpp:1263)
+==3540==    by 0x40E2AD: proxy::RunTests::execute_test(monad_shared::unit_test_input const&, bool) (testscene.cpp:1244)
+==3540==    by 0x40D132: proxy::RunTests::run_single_test(monad_shared::unit_test_input const&) (testscene.cpp:1005)
+==3540==    by 0x40D03A: proxy::RunTests::run_single_test(char const*) (testscene.cpp:993)
+==3540==    by 0x40CEA2: proxy::RunTests::execute_by_mode() (testscene.cpp:978)
+==3540==    by 0x40CE53: proxy::RunTests::execute() (testscene.cpp:969)
+==3540==    by 0x40C5EF: main (testscene.cpp:859)
+==3540==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==3540== 
+==3540== 
+==3540== Process terminating with default action of signal 11 (SIGSEGV)
+==3540==  Access not within mapped region at address 0x0
+==3540==    at 0x41FDE9: Scene::changemaxlayers(int) (scene.cpp:101)
+==3540==    by 0x40852B: proxy_test::SceneChangeMaxLayersSmaller(util::sizedpipestream<512ul>&) (testscene.cpp:316)
+==3540==    by 0x414DC5: monad_shared::unit_test_input::execute(util::sizedpipestream<512ul>&) const (monad_shared.h:72)
+==3540==    by 0x40E429: proxy::test_execution::child_test() (testscene.cpp:1304)
+==3540==    by 0x40DE48: proxy::test_execution::child() (testscene.cpp:1189)
+==3540==    by 0x416D92: int proxy::fork_execute<proxy::test_execution>(proxy::test_execution&) (testscene.cpp:1263)
+==3540==    by 0x40E2AD: proxy::RunTests::execute_test(monad_shared::unit_test_input const&, bool) (testscene.cpp:1244)
+==3540==    by 0x40D132: proxy::RunTests::run_single_test(monad_shared::unit_test_input const&) (testscene.cpp:1005)
+==3540==    by 0x40D03A: proxy::RunTests::run_single_test(char const*) (testscene.cpp:993)
+==3540==    by 0x40CEA2: proxy::RunTests::execute_by_mode() (testscene.cpp:978)
+==3540==    by 0x40CE53: proxy::RunTests::execute() (testscene.cpp:969)
+==3540==    by 0x40C5EF: main (testscene.cpp:859)
+==3540==  If you believe this happened as a result of a stack
+==3540==  overflow in your program's main thread (unlikely but
+==3540==  possible), you can try to increase the size of the
+==3540==  main thread stack using the --main-stacksize= flag.
+==3540==  The main thread stack size used in this run was 10485760.
+==3539== 31 bytes in 1 blocks are possibly lost in loss record 2 of 10
+==3539==    at 0x4A06C8E: operator new(unsigned long) (vg_replace_malloc.c:261)
+==3539==    by 0x3A82C9C3A8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.13)
+==3539==    by 0x3A82C9CDC4: ??? (in /usr/lib64/libstdc++.so.6.0.13)
+==3539==    by 0x3A82C9CF12: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.13)
+==3539==    by 0x40CB83: proxy::add_output_check::add_output_check(char const*, bool (*)(std::string const&, std::string const&)) (testscene.cpp:920)
+==3539==    by 0x414818: __static_initialization_and_destruction_0(int, int) (testscene.cpp:786)
+==3539==    by 0x41486A: global constructors keyed to testingImages (testscene.cpp:2752)
+==3539==    by 0x420715: ??? (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==3539==    by 0x40362A: ??? (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==3539== 
+==3539== 33 bytes in 1 blocks are possibly lost in loss record 3 of 10
+==3539==    at 0x4A06C8E: operator new(unsigned long) (vg_replace_malloc.c:261)
+==3539==    by 0x3A82C9C3A8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.13)
+==3539==    by 0x3A82C9CDC4: ??? (in /usr/lib64/libstdc++.so.6.0.13)
+==3539==    by 0x3A82C9CF12: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.13)
+==3539==    by 0x40CB83: proxy::add_output_check::add_output_check(char const*, bool (*)(std::string const&, std::string const&)) (testscene.cpp:920)
+==3539==    by 0x41482C: __static_initialization_and_destruction_0(int, int) (testscene.cpp:792)
+==3539==    by 0x41486A: global constructors keyed to testingImages (testscene.cpp:2752)
+==3539==    by 0x420715: ??? (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==3539==    by 0x40362A: ??? (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==3539== 
+==3539== 37 bytes in 1 blocks are possibly lost in loss record 4 of 10
+==3539==    at 0x4A06C8E: operator new(unsigned long) (vg_replace_malloc.c:261)
+==3539==    by 0x3A82C9C3A8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.13)
+==3539==    by 0x3A82C9CDC4: ??? (in /usr/lib64/libstdc++.so.6.0.13)
+==3539==    by 0x3A82C9CF12: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.13)
+==3539==    by 0x40CB83: proxy::add_output_check::add_output_check(char const*, bool (*)(std::string const&, std::string const&)) (testscene.cpp:920)
+==3539==    by 0x414840: __static_initialization_and_destruction_0(int, int) (testscene.cpp:798)
+==3539==    by 0x41486A: global constructors keyed to testingImages (testscene.cpp:2752)
+==3539==    by 0x420715: ??? (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==3539==    by 0x40362A: ??? (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==3539== 
+==3539== 132 bytes in 1 blocks are possibly lost in loss record 9 of 10
+==3539==    at 0x4A05FDE: malloc (vg_replace_malloc.c:236)
+==3539==    by 0x3A82CBB746: __cxa_allocate_exception (in /usr/lib64/libstdc++.so.6.0.13)
+==3539==    by 0x416E2C: int proxy::fork_execute<proxy::test_execution>(proxy::test_execution&) (testscene.cpp:1277)
+==3539==    by 0x40E2AD: proxy::RunTests::execute_test(monad_shared::unit_test_input const&, bool) (testscene.cpp:1244)
+==3539==    by 0x40D132: proxy::RunTests::run_single_test(monad_shared::unit_test_input const&) (testscene.cpp:1005)
+==3539==    by 0x40D03A: proxy::RunTests::run_single_test(char const*) (testscene.cpp:993)
+==3539==    by 0x40CEA2: proxy::RunTests::execute_by_mode() (testscene.cpp:978)
+==3539==    by 0x40CE53: proxy::RunTests::execute() (testscene.cpp:969)
+==3539==    by 0x40C5EF: main (testscene.cpp:859)
+==3539== 
+Result: FAILED:
+Segmentation fault
+
+----------------------------------------------------------------
+SceneChangeMaxLayersInvalidChange [2 points]
+Result: FAILED: Segmentation fault
+Took 15212774162443ms (2000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+SceneChangeLayerInvalid [2 points]
+Result: FAILED: Segmentation fault
+Took 15238543966219ms (2000ms timeout)
+Output:
+----------------------------------------------------------------
+invalid index
+
+----------------------------------------------------------------
+SceneDrawScene3 [3 points]
+Result: FAILED: Segmentation fault
+Took 15251428868107ms (2000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+SceneDrawScene4 [3 points]
+Result: FAILED: Aborted
+Took 15255723835398ms (2000ms timeout)
+Output:
+----------------------------------------------------------------
+*** glibc detected *** ./proxy: free(): invalid next size (fast): 0x00000000019847b0 ***
+======= Backtrace: =========
+/lib64/libc.so.6[0x3a7c475916]
+/lib64/libc.so.6[0x3a7c478443]
+./proxy[0x41fadc]
+./proxy[0x41fab0]
+./proxy[0x406b38]
+./proxy[0x409ec1]
+./proxy[0x414dc6]
+./proxy[0x40e42a]
+./proxy[0x40de49]
+./proxy[0x416d93]
+./proxy[0x40e2ae]
+./proxy[0x40d520]
+./proxy[0x40cec3]
+./proxy[0x40ce54]
+./proxy[0x40c5f0]
+/lib64/libc.so.6(__libc_start_main+0xfd)[0x3a7c41ecdd]
+./proxy[0x4040d9]
+======= Memory map: ========
+00400000-0042c000 r-xp 00000000 00:10 19259703                           /dev/shm/geigle1/grading/monad/mp2_grade/testscene
+0062c000-0062d000 rw-p 0002c000 00:10 19259703                           /dev/shm/geigle1/grading/monad/mp2_grade/testscene
+01980000-019a1000 rw-p 00000000 00:00 0 
+019a1000-019be000 rw-p 00000000 00:00 0 
+3a7c000000-3a7c020000 r-xp 00000000 fd:00 393315                         /lib64/ld-2.12.so
+3a7c21f000-3a7c220000 r--p 0001f000 fd:00 393315                         /lib64/ld-2.12.so
+3a7c220000-3a7c221000 rw-p 00020000 fd:00 393315                         /lib64/ld-2.12.so
+3a7c221000-3a7c222000 rw-p 00000000 00:00 0 
+3a7c400000-3a7c589000 r-xp 00000000 fd:00 393344                         /lib64/libc-2.12.so
+3a7c589000-3a7c789000 ---p 00189000 fd:00 393344                         /lib64/libc-2.12.so
+3a7c789000-3a7c78d000 r--p 00189000 fd:00 393344                         /lib64/libc-2.12.so
+3a7c78d000-3a7c78e000 rw-p 0018d000 fd:00 393344                         /lib64/libc-2.12.so
+3a7c78e000-3a7c793000 rw-p 00000000 00:00 0 
+3a7c800000-3a7c883000 r-xp 00000000 fd:00 393531                         /lib64/libm-2.12.so
+3a7c883000-3a7ca82000 ---p 00083000 fd:00 393531                         /lib64/libm-2.12.so
+3a7ca82000-3a7ca83000 r--p 00082000 fd:00 393531                         /lib64/libm-2.12.so
+3a7ca83000-3a7ca84000 rw-p 00083000 fd:00 393531                         /lib64/libm-2.12.so
+3a7d400000-3a7d415000 r-xp 00000000 fd:00 394346                         /lib64/libz.so.1.2.3
+3a7d415000-3a7d614000 ---p 00015000 fd:00 394346                         /lib64/libz.so.1.2.3
+3a7d614000-3a7d615000 r--p 00014000 fd:00 394346                         /lib64/libz.so.1.2.3
+3a7d615000-3a7d616000 rw-p 00015000 fd:00 394346                         /lib64/libz.so.1.2.3
+3a81000000-3a81016000 r-xp 00000000 fd:00 394354                         /lib64/libgcc_s-4.4.6-20120305.so.1
+3a81016000-3a81215000 ---p 00016000 fd:00 394354                         /lib64/libgcc_s-4.4.6-20120305.so.1
+3a81215000-3a81216000 rw-p 00015000 fd:00 394354                         /lib64/libgcc_s-4.4.6-20120305.so.1
+3a81400000-3a81425000 r-xp 00000000 fd:00 801778                         /usr/lib64/libpng12.so.0.49.0
+3a81425000-3a81625000 ---p 00025000 fd:00 801778                         /usr/lib64/libpng12.so.0.49.0
+3a81625000-3a81626000 rw-p 00025000 fd:00 801778                         /usr/lib64/libpng12.so.0.49.0
+3a82c00000-3a82ce8000 r-xp 00000000 fd:00 821685                         /usr/lib64/libstdc++.so.6.0.13
+3a82ce8000-3a82ee8000 ---p 000e8000 fd:00 821685                         /usr/lib64/libstdc++.so.6.0.13
+3a82ee8000-3a82eef000 r--p 000e8000 fd:00 821685                         /usr/lib64/libstdc++.so.6.0.13
+3a82eef000-3a82ef1000 rw-p 000ef000 fd:00 821685                         /usr/lib64/libstdc++.so.6.0.13
+3a82ef1000-3a82f06000 rw-p 00000000 00:00 0 
+7ff049f8d000-7ff049f93000 rw-p 00000000 00:00 0 
+7ff049fb4000-7ff049fb5000 rw-p 00000000 00:00 0 
+7ff049fb5000-7ff049fb7000 rw-p 00000000 00:00 0 
+7fff440e6000-7fff440fb000 rw-p 00000000 00:00 0                          [stack]
+7fff441ff000-7fff44200000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+
+----------------------------------------------------------------
+SceneDeletePictureInvalid [2 points]
+Result: FAILED: Segmentation fault
+Took 15285788606475ms (2000ms timeout)
+Output:
+----------------------------------------------------------------
+invalid index
+
+----------------------------------------------------------------
+Valgrind3 (run under valgrind) [5 points]
+Result: FAILED: Segmentation fault
+Took unknown time (10000ms timeout)
+Output:
+----------------------------------------------------------------
+Running Valgrind3 [worth 5 points, output below]
+==3566== Invalid read of size 8
+==3566==    at 0x41FDE9: Scene::changemaxlayers(int) (scene.cpp:101)
+==3566==    by 0x40B0EE: proxy_test::Valgrind3(util::sizedpipestream<512ul>&) (testscene.cpp:584)
+==3566==    by 0x414DC5: monad_shared::unit_test_input::execute(util::sizedpipestream<512ul>&) const (monad_shared.h:72)
+==3566==    by 0x40E429: proxy::test_execution::child_test() (testscene.cpp:1304)
+==3566==    by 0x40DE48: proxy::test_execution::child() (testscene.cpp:1189)
+==3566==    by 0x416D92: int proxy::fork_execute<proxy::test_execution>(proxy::test_execution&) (testscene.cpp:1263)
+==3566==    by 0x40E2AD: proxy::RunTests::execute_test(monad_shared::unit_test_input const&, bool) (testscene.cpp:1244)
+==3566==    by 0x40D132: proxy::RunTests::run_single_test(monad_shared::unit_test_input const&) (testscene.cpp:1005)
+==3566==    by 0x40D03A: proxy::RunTests::run_single_test(char const*) (testscene.cpp:993)
+==3566==    by 0x40CEA2: proxy::RunTests::execute_by_mode() (testscene.cpp:978)
+==3566==    by 0x40CE53: proxy::RunTests::execute() (testscene.cpp:969)
+==3566==    by 0x40C5EF: main (testscene.cpp:859)
+==3566==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==3566== 
+==3566== 
+==3566== Process terminating with default action of signal 11 (SIGSEGV)
+==3566==  Access not within mapped region at address 0x0
+==3566==    at 0x41FDE9: Scene::changemaxlayers(int) (scene.cpp:101)
+==3566==    by 0x40B0EE: proxy_test::Valgrind3(util::sizedpipestream<512ul>&) (testscene.cpp:584)
+==3566==    by 0x414DC5: monad_shared::unit_test_input::execute(util::sizedpipestream<512ul>&) const (monad_shared.h:72)
+==3566==    by 0x40E429: proxy::test_execution::child_test() (testscene.cpp:1304)
+==3566==    by 0x40DE48: proxy::test_execution::child() (testscene.cpp:1189)
+==3566==    by 0x416D92: int proxy::fork_execute<proxy::test_execution>(proxy::test_execution&) (testscene.cpp:1263)
+==3566==    by 0x40E2AD: proxy::RunTests::execute_test(monad_shared::unit_test_input const&, bool) (testscene.cpp:1244)
+==3566==    by 0x40D132: proxy::RunTests::run_single_test(monad_shared::unit_test_input const&) (testscene.cpp:1005)
+==3566==    by 0x40D03A: proxy::RunTests::run_single_test(char const*) (testscene.cpp:993)
+==3566==    by 0x40CEA2: proxy::RunTests::execute_by_mode() (testscene.cpp:978)
+==3566==    by 0x40CE53: proxy::RunTests::execute() (testscene.cpp:969)
+==3566==    by 0x40C5EF: main (testscene.cpp:859)
+==3566==  If you believe this happened as a result of a stack
+==3566==  overflow in your program's main thread (unlikely but
+==3566==  possible), you can try to increase the size of the
+==3566==  main thread stack using the --main-stacksize= flag.
+==3566==  The main thread stack size used in this run was 10485760.
+==3565== 31 bytes in 1 blocks are possibly lost in loss record 2 of 10
+==3565==    at 0x4A06C8E: operator new(unsigned long) (vg_replace_malloc.c:261)
+==3565==    by 0x3A82C9C3A8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.13)
+==3565==    by 0x3A82C9CDC4: ??? (in /usr/lib64/libstdc++.so.6.0.13)
+==3565==    by 0x3A82C9CF12: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.13)
+==3565==    by 0x40CB83: proxy::add_output_check::add_output_check(char const*, bool (*)(std::string const&, std::string const&)) (testscene.cpp:920)
+==3565==    by 0x414818: __static_initialization_and_destruction_0(int, int) (testscene.cpp:786)
+==3565==    by 0x41486A: global constructors keyed to testingImages (testscene.cpp:2752)
+==3565==    by 0x420715: ??? (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==3565==    by 0x40362A: ??? (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==3565== 
+==3565== 33 bytes in 1 blocks are possibly lost in loss record 3 of 10
+==3565==    at 0x4A06C8E: operator new(unsigned long) (vg_replace_malloc.c:261)
+==3565==    by 0x3A82C9C3A8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.13)
+==3565==    by 0x3A82C9CDC4: ??? (in /usr/lib64/libstdc++.so.6.0.13)
+==3565==    by 0x3A82C9CF12: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.13)
+==3565==    by 0x40CB83: proxy::add_output_check::add_output_check(char const*, bool (*)(std::string const&, std::string const&)) (testscene.cpp:920)
+==3565==    by 0x41482C: __static_initialization_and_destruction_0(int, int) (testscene.cpp:792)
+==3565==    by 0x41486A: global constructors keyed to testingImages (testscene.cpp:2752)
+==3565==    by 0x420715: ??? (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==3565==    by 0x40362A: ??? (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==3565== 
+==3565== 37 bytes in 1 blocks are possibly lost in loss record 4 of 10
+==3565==    at 0x4A06C8E: operator new(unsigned long) (vg_replace_malloc.c:261)
+==3565==    by 0x3A82C9C3A8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.13)
+==3565==    by 0x3A82C9CDC4: ??? (in /usr/lib64/libstdc++.so.6.0.13)
+==3565==    by 0x3A82C9CF12: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.13)
+==3565==    by 0x40CB83: proxy::add_output_check::add_output_check(char const*, bool (*)(std::string const&, std::string const&)) (testscene.cpp:920)
+==3565==    by 0x414840: __static_initialization_and_destruction_0(int, int) (testscene.cpp:798)
+==3565==    by 0x41486A: global constructors keyed to testingImages (testscene.cpp:2752)
+==3565==    by 0x420715: ??? (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==3565==    by 0x40362A: ??? (in /dev/shm/geigle1/grading/monad/mp2_grade/testscene)
+==3565== 
+==3565== 132 bytes in 1 blocks are possibly lost in loss record 9 of 10
+==3565==    at 0x4A05FDE: malloc (vg_replace_malloc.c:236)
+==3565==    by 0x3A82CBB746: __cxa_allocate_exception (in /usr/lib64/libstdc++.so.6.0.13)
+==3565==    by 0x416E2C: int proxy::fork_execute<proxy::test_execution>(proxy::test_execution&) (testscene.cpp:1277)
+==3565==    by 0x40E2AD: proxy::RunTests::execute_test(monad_shared::unit_test_input const&, bool) (testscene.cpp:1244)
+==3565==    by 0x40D132: proxy::RunTests::run_single_test(monad_shared::unit_test_input const&) (testscene.cpp:1005)
+==3565==    by 0x40D03A: proxy::RunTests::run_single_test(char const*) (testscene.cpp:993)
+==3565==    by 0x40CEA2: proxy::RunTests::execute_by_mode() (testscene.cpp:978)
+==3565==    by 0x40CE53: proxy::RunTests::execute() (testscene.cpp:969)
+==3565==    by 0x40C5EF: main (testscene.cpp:859)
+==3565== 
+Result: FAILED:
+Segmentation fault
+
+
+----------------------------------------------------------------
+Total score...
+================================================================
+TOTAL SCORE: 75
+
